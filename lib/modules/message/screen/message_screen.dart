@@ -45,7 +45,7 @@ class _MessageScreenState extends State<MessageScreen> {
   Widget _buildAppBar(BuildContext context) {
     return AppBar(
         title: const Text('MQTT'),
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blue,
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 15.0),

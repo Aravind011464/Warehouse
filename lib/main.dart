@@ -6,6 +6,7 @@ import 'modules/helpers/screen_route.dart';
 import 'modules/helpers/service_locator.dart';
 import 'modules/message/screen/message_screen.dart';
 import 'modules/settings/screen/settings_screen.dart';
+import '/screen/registration_screen.dart';
 
 void main() {
   setupLocator();
@@ -19,26 +20,15 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<MQTTManager>(
       create: (context) =>service_locator<MQTTManager>(),
       child: MaterialApp(
-          title: 'Flutter Demo',
+          title: 'IoT Project',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            // This is the theme of your application.
-            //
-            // Try running your application with "flutter run". You'll see the
-            // application has a blue toolbar. Then, without quitting the app, try
-            // changing the primarySwatch below to Colors.green and then invoke
-            // "hot reload" (press "r" in the console where you ran "flutter run",
-            // or simply save your changes to "hot reload" in a Flutter IDE).
-            // Notice that the counter didn't reset back to zero; the application
-            // is not restarted.
-            primarySwatch: Colors.blue,
-            // This makes the visual density adapt to the platform that you run
-            // the app on. For desktop platforms, the controls will be smaller and
-            // closer together (more dense) than on mobile platforms.
-            visualDensity: VisualDensity.adaptivePlatformDensity,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
           ),
           initialRoute: '/',
           routes: {
-            '/': (BuildContext context) => MessageScreen(),
+            '/': (BuildContext context) => RegistrationScreen(),
             SETTINGS_ROUTE: (BuildContext context) => SettingsScreen(),
           }),
     );
